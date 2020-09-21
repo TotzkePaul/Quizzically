@@ -1,0 +1,22 @@
+<h1 id="tableLabel">All Quizzes</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!quizzes"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="quizzes">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Owner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let quiz of quizzes">
+      <td>{{ quiz.id }}</td>
+      <td>{{ quiz.title }}</td>
+      <td>{{ quiz.ownerId }}</td>
+    </tr>
+  </tbody>
+</table>
