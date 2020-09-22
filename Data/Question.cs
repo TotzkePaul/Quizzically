@@ -6,7 +6,7 @@ namespace Quizzically.Data
     public class Question
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public Guid QuizId { get; set; }
         public string QuestionContent { get; set; }
         public string Option1 { get; set; }

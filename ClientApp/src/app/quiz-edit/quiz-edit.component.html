@@ -1,0 +1,20 @@
+<h1 id="tableLabel">All Quizzes</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!quiz"><em>Loading...</em></p>
+<div *ngIf="quiz">
+  <div>{{ quiz.id }}</div>
+  <div>{{ quiz.title }}</div>
+  <div>{{ quiz.ownerId }}</div>
+
+
+  <label>Address</label>
+
+  <input type="text" name="address" ng-model="quiz.title" />
+
+</div>
+
+<button class="btn btn-sm btn-success"
+        type="button"
+        ng-click="save()" > Save </button>

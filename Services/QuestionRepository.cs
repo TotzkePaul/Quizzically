@@ -11,7 +11,7 @@ namespace Quizzically.Services
     {
         Task<IEnumerable<Question>> GetQuestionListAsync();
         Task<Question> CreateQuestionsAsync(Question question);
-        Task<Question> GetQuestionAsync(int Id);
+        Task<Question> GetQuestionAsync(Guid Id);
         Task<IEnumerable<Question>> GetQuestionByQuizIdAsync(Guid quizId);
         Task<bool> SaveAll();
     }
@@ -30,7 +30,7 @@ namespace Quizzically.Services
             return question;
         }
 
-        public async Task<Question> GetQuestionAsync(int Id)
+        public async Task<Question> GetQuestionAsync(Guid Id)
         {
             return await _dbContext.Questions .Where(c => c.Id == Id).FirstOrDefaultAsync();
         }

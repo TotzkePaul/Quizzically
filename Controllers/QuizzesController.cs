@@ -27,7 +27,7 @@ namespace QuizApp.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetQuizzesList()
         {
-            string userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            Guid userId = new Guid(User.FindFirst(ClaimTypes.NameIdentifier).Value);
             IEnumerable<Quiz> quizzes = (await _quizAppRepository.GetQuizListAsync()).Where(q => q.OwnerId == userId);
             return Ok(quizzes);
         }
@@ -58,7 +58,7 @@ namespace QuizApp.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            string currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            Guid currentUserId = new Guid( User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
             quiz.OwnerId = currentUserId;
            await _quizAppRepository.CreateQuizAsync(quiz);

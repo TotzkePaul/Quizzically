@@ -18,6 +18,7 @@ namespace Quizzically.Data
         }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Config> Configs { get; set; }
+        public DbSet<Answer> Answers { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Quiz> Quizzes { get; set; }
     }
