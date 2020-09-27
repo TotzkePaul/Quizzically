@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-quiz',
-  templateUrl: './quiz.component.html'
+  selector: 'app-quiz-edit',
+  templateUrl: './quiz-edit.component.html'
 })
-export class QuizComponent {
+export class QuizEditComponent {
   public quiz: Quiz;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private route: ActivatedRoute) {

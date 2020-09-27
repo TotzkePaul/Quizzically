@@ -1,0 +1,10 @@
+<div>
+  <label>Email: </label> <input type="text" [(ngModel)]="registerUser.email" /> <br />
+  <label>Username: </label> <input type="text" [(ngModel)]="registerUser.username" /> <br />
+  <label>Password: </label> <input type="password" [(ngModel)]="registerUser.password" />
+  <label>Confirm Password: </label> <input type="password" [(ngModel)]="registerUser.confirmpassword" />
+</div>
+<button (click)="submit()">Login</button>
+
+
+<a routerLink="/login" routerLinkActive="active">Login</a>
